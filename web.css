@@ -450,8 +450,8 @@ body {
 
 .collection {
     position:absolute;
-    left: -100px; /* Position from the left side of the image */
-    top:60%;/* Position from the top side of the image */
+    left: -20px; /* Position from the left side of the image */
+    top:80%;/* Position from the top side of the image */
     color: rgb(17, 17, 17); /* Text color for better visibility */
     background-color: white; /* Semi-transparent background */
     padding: 10px; /* Padding around the content */
@@ -493,27 +493,85 @@ body {
 
 
 
+/* Scroll container for vertical scrolling */
+.scroll-container {
+    height:500px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Padding inside the scroll container */
+    margin-left: 10px;
+     /* Optional border for better visualization */
+    border-radius: 25px; /* Optional rounded corners */
+}
+
+/* Scrollable gallery container styling */
+/* Scroll container for vertical scrolling */
+.scroll-container {
+    height: 400px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Padding inside the scroll container */
+    margin-left: -5px;
+     /* Optional order for better visualization */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
 /* Scrollable gallery container styling */
 .scroll-gallery {
     display: grid; /* Use grid layout for images */
-    grid-template-columns: repeat(2, 1fr); /* Two columns *//* Flex layout for horizontal scrolling */
-    gap:10px; /* Space between images */
-    padding: 30px; /* Padding inside the gallery container */
-    margin-left: 10px;
-    
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    grid-template-rows: repeat(2, auto); /* Two rows layout */
+    gap: 10px; /* Space between images */
 }
-/* Styling for each gallery image */
+
+/* Styling for each gallery item */
+.gallery-item {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align items horizontally */
+    width: 100%; /* Full width of the container */
+    border-radius: 5px; /* Rounded corners for items */
+    overflow: hidden; /* Ensure no overflow of content */
+}
+
 .scroll-gallery img {
-    width: 100px; /* Increased width for each image */
-    height: 150px; /* Increased height for each image */
-    border-radius: 5px; /* Rounded corners for gallery images */
+    width: 150px; /* Full width of each gallery item */
+    height: 200px; /* Height of each image */
+    border-radius: 15px; /* Rounded corners for images */
     cursor: pointer;
     transition: transform 0.3s; /* Zoom effect on hover */
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 .scroll-gallery img:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.gallery-item p {
+    margin-top: 5px; /* Space between image and text */
+    font-size: 14px; /* Font size for the text */
+    text-align: center; /* Center align text */
+    color: #333; /* Text color */
+}
+
+/* Custom positioning for specific items */
+.item-1 {
+    grid-row: 1 / 2; /* Place in the first row */
+    grid-column: 1 / 2; /* Place in the first column */
+}
+
+.item-2 {
+    grid-row: 2 / 3; /* Place in the second row */
+    grid-column: 1 / 2; /* Place in the first column */
+}
+
+.item-3 {
+    grid-row: 1 / 2; /* Place in the first row */
+    grid-column: 2 / 3; /* Place in the second column */
+}
+
+.item-4 {
+    grid-row: 2 / 3; /* Place in the second row */
+    grid-column: 2 / 3; /* Place in the second column */
 }
 
 

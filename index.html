@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnowFlake Sofa</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="./web.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-snowflake"></i>
+                    <span>Nordvic</span>
+            </div>
+            <div class="nav">
+                <a class="active" href="#">New</a>
+                <a href="#">About</a>
+                <a href="#">Catalog</a>
+            </div>
+            <a href="#" class="link">Summer Collection</a>
+
+            <div class="profile">
+                <img alt="User profile picture" height="30" src="img/human.png" width="30"/>
+                <i class="fas fa-shopping-cart cart"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="details">
+                <h1>SnøwFlake</h1>
+                <div class="price">Sofa · $1100</div>
+                <div class="description">
+                    “Pure milk colored pillowed in synergy with white<br> wood makes space more clear and chilly, just like
+                    <br> your mom loves”
+                </div>
+                <div class="options">
+                    <div class="size">
+                        <button class="active">S</button>
+                        <button>M</button>
+                        <button>L</button>
+                        <button>XL</button>
+                    </div>
+                    
+                   
+                    <div class="button-container">
+                        <button class="dropdown-button"></button>
+                    </div>
+                    <div class="input-group">
+                        <button id="decrement" onclick="decrementValue()">-</button>
+                        <input type="number" id="input" value="0" readonly>
+                        <button id="increment" onclick="incrementValue()">+</button>
+                    </div>
+                    <div class="buy">
+                        <button>Buy</button>
+                    </div>
+                </div>
+                
+                <!-- Scrollable gallery section -->
+                <div class="scroll-gallery">
+                    <img src="img/g1.jpeg" alt="Gallery image 1">
+                    <img src="img/g4.png" alt="Gallery image 2">
+                    <img src="img/g1.jpeg" alt="Gallery image 1">
+                    <img src="img/g4.png" alt="Gallery image 2">
+                   
+                </div>
+            </div>
+            <div class="image">
+                <img id="main-image" alt="Main image" src="img/furniture.jpg" height="400" width="500"/>
+                <div class="ratings">
+                    <div class="rating large">
+                        <span>9'</span>
+                        <span>User Rating</span>
+                    </div>
+                    <div class="rating small">
+                        <span>8'</span>
+                        <span>Furniture Lab</span>
+                    </div>
+                </div>
+
+                
+                
+                    <div class="arrow-up" onclick="showPrevImage()">
+                        <span>&#8599;</span>
+                    </div>
+                    <div class="arrow-down" onclick="showNextImage()">
+                        <span>&#8601;</span>
+                    </div>
+        
+
+                    <div class="gallery">
+                        <img src="img/g1.jpeg" alt="Gallery image 1" onclick="updateMainImage('img/g1.jpeg')">
+                        <img src="img/g2.jpeg" alt="Gallery image 2" onclick="updateMainImage('img/g2.jpeg')">
+                        <img src="img/g3.jpeg" alt="Gallery image 3" onclick="updateMainImage('img/g3.jpeg')">
+                        <img src="img/g4.png" alt="Gallery image 4" onclick="updateMainImage('img/g4.png')">
+                    </div>
+                
+                <div class="actions">
+                    <button><i class="fas fa-expand"></i></button>
+                    <button><i class="fas fa-heart"></i></button>
+                    <button><i class="fas fa-share-alt"></i></button>
+                </div>
+
+                <!--Summercollection-->
+                <div class="collection">
+                    <div class="tags">
+                        <button>Table</button>
+                        <button class="active">Sofa</button>
+                        <button>Cupboard</button>
+                        <button>Bookshelf</button>
+                        <button>Chair</button>
+                        <button>Bed</button>
+                    </div>
+                    <h2>Summer Collection</h2>
+                </div>
+
+               
+
+                
+        
+
+            </div>
+                
+        </div>
+        
+            
+    </div>
+    
+    <script src="file.js"></script> 
+    <script src="gallery.js"></script> 
+</body>
+</html>

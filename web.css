@@ -1,0 +1,576 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 40px;
+    background-color: #18949491;
+    
+}
+
+.container {
+    width: auto;
+    height: auto;
+    margin: auto;
+    border-radius: 20px;
+    padding: 20px;
+    background-color:white;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: lighter;
+   
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    gap: 5px;
+}
+.logo i{
+     margin-left: 5px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+     /* Solid line */
+    padding: 10px;
+    gap: 5px;
+    
+}
+
+.nav a {
+    color: #0e0d0d;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+
+    border-radius: 45%; /* Makes the button circular */
+    border: 1px solid #b4bdba;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    transition: background-color 0.3s;
+    font-size: 10px; /* Adjust as needed */
+    text-align: center; /* Ensure text is centered within the button */
+   
+}
+
+.link{
+    color: #000;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 45%; /* Makes the button circular */
+    border: 1px solid #b4bdba;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    transition: background-color 0.3s;
+    font-size: 10px; /* Adjust as needed */
+    text-align: center; /* Ensure text is centered within the button */
+}
+
+.profile i{
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 45%; /* Makes the button circular */
+    border: 1px solid #b4bdba;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    transition: background-color 0.3s;
+    font-size: 20px; /* Adjust as needed */
+    text-align: center; /* Ensure text is centered within the button */
+}
+
+.cart {
+    font-size: 20px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.details h1 {
+    font-size: 80px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 10px;
+    font-weight: normal;
+    
+}
+
+.price {
+    font-size: 30px;
+    color: gray;
+    margin-bottom: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-style: normal;
+}
+
+.description {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.options {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.size {
+    display: flex; /* Use Flexbox to align buttons */
+    gap:0px; /* Space between buttons */
+}
+.size button {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    border-radius: 50%; /* Makes the button circular */
+    border: 1px solid #272928;
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    transition: background-color 0.3s;
+    font-size: 10px; /* Adjust as needed */
+    text-align: center; /* Ensure text is centered within the button */
+    
+}
+
+.size button.active,
+.color button.active {
+    font-weight: bold;
+}
+
+/* increment button */
+.input-group {
+    display: flex;
+    justify-content:left;
+    align-items:center;
+    flex-direction: row;
+    border-radius: 15px;
+    width: 130px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  button,
+  input {
+    outline: none;
+    border: none;
+    padding: 8px;
+    font-size: 15px;
+    
+  }
+  
+  input {
+    width: 50%;
+    text-align: center;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  button:nth-last-child(1) {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  button:nth-child(1) {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+  
+  button:hover {
+    background-color: #e6e6e6;
+  }
+  button:nth-last-child(1):active {
+    box-shadow: inset -4px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  button:nth-child(1):active {
+    box-shadow: inset 4px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+
+
+  /* dropdown button*/
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dropdown-button {
+    
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 50%; /* Makes the button circular */
+    border: 1px solid #b4bdba;
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    transition: background-color 0.3s;
+    font-size: 10px; /* Adjust as needed */
+    text-align: center; /* Ensure text is centered within the button */
+}
+
+.dropdown-button {
+    background-color: #f0f0f0;
+    font-size: 14px; /* Adjust as needed */
+}
+
+.dropdown-button::after {
+    content: "▼";
+    font-size: 12px;
+    margin-left:0;
+}
+
+.dropdown-button:hover {
+    background-color: #e0e0e0; /* Hover effect */
+}
+
+.buy button {
+    margin-right: 10px;
+    margin-top:-10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px; /* Makes the button circular */
+    border: 1px solid #b4bdba;
+    align-items: center; /* Vertically center text */
+    justify-content: left; /* Horizontally center text */
+    transition: background-color 0.3s;
+    font-size: 8px; /* Adjust as needed */
+    text-align: center; /* Ensure text is centered within the button */
+}
+
+.image {
+    position: relative;
+    width: 400px; /* Adjust as needed */
+    height: 700px; /* Adjust as needed */
+    margin-right: 20px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    border-radius: 10px; /* Optional: rounded corners for the image */
+}
+
+.ratings {
+    position: absolute;
+    top: 30px; /* Adjust position as needed */
+    left: 20px; /* Adjust position as needed */
+    display: flex;
+    flex-direction:column;
+    gap: -1px;
+    
+    /* Space between rating elements */
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    background:white; /* Semi-transparent background */
+    padding: 5px;
+    border-radius: 20px; /* Rounded corners for the rating elements */
+    color:black; /* Text color */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+    border: 1px solid #b4bdba;
+
+}
+.rating.large {
+    font-size: 18px; /* Larger font size for the large rating */
+}
+
+.rating.small {
+    font-size: 14px; /* Smaller font size for the small rating */
+}
+
+
+
+.rating:hover {
+    background-color: rgba(237, 242, 244, 0.8); /* Darker background on hover */
+}
+
+.rating span:first-child {
+    width: 30px; /* Size of the circular box */
+    height: 30px; /* Size of the circular box */
+    border-radius: 50%; /* Makes the box circular */
+    background-color: #c3ecec; /* Background color of the circular box */
+    color: #000; /* Text color inside the circular box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b4bdba;
+    margin-right: 10px; /* Space between circle and text */
+    font-size: 16px; /* Font size inside the circle */
+}
+
+.rating.small span:first-child {
+    width: 25px; /* Smaller size for the circular box */
+    height: 20px; /* Smaller size for the circular box */
+    font-size: 13px; /* Smaller font size inside the circle */
+}
+
+.rating span:last-child {
+    font-size: 14px; /* Font size for the text beside the circle */
+}
+.rating.small span:last-child {
+    font-size: 14px; /* Smaller font size for the text beside the circle */
+}
+
+        
+.arrow-up, .arrow-down {
+    position: absolute;
+    left: -35px; /* Move arrow outside the image */
+    font-size: 17px; /* Size of the arrow */
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    color: #151515; /* Arrow color */
+    cursor: pointer; /* Make it clickable */
+    border: 1px solid #b4bdba;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #fff; /* Background for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-up {
+    top: 30%; /* Center vertically relative to the image */
+}
+
+.arrow-down {
+    top: 34.3%; /* Center vertically relative to the image */
+}
+
+.gallery {
+    display: grid; /* Initially hide the gallery */
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 5px; /* Space between gallery images */
+    max-width: 100px; /* Limit width of the gallery container */
+    background-color: #151515;
+    padding: 5px;
+    position: absolute;
+    right: -25px;
+    top: 70%; /* Position to the right side of the image */
+    border-radius: 10px;
+    z-index: 10; /* Ensure gallery appears above other content */
+}
+
+.gallery img {
+    width: 40px; /* Width of each gallery image */
+    height: 40px; /* Height of each gallery image */
+    object-fit: cover; /* Cover the box while maintaining aspect ratio */
+    border-radius: 10px; /* Rounded corners for gallery images */
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.5s; /* Animation on hover and fade transition */
+    display: block; /* Ensures images are displayed in a block format */
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+
+.actions {
+    position: absolute;
+    right: -10px; /* Position to the right side of the image */
+    top: 30%; /* Center vertically relative to the image */
+    transform: translateY(-50%); /* Adjust vertical alignment */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.actions button {
+    background-color: white; /* Button background color */
+    border: 1px solid #b4bdba;
+    border-radius: 50%; /* Make buttons circular */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.actions button:hover {
+    background-color: rgba(237, 242, 244, 0.8); /* Change background color on hover */
+}
+
+.collection {
+    position:absolute;
+    left: -100px; /* Position from the left side of the image */
+    top:60%;/* Position from the top side of the image */
+    color: rgb(17, 17, 17); /* Text color for better visibility */
+    background-color: white; /* Semi-transparent background */
+    padding: 10px; /* Padding around the content */
+    border-radius: 30px; /* Rounded corners for the container */
+    width: 180px;
+    height: 120px;
+}
+
+.collection h2 {
+    margin: 5px 5px 10px 5px; /* Remove default margins and add bottom margin */
+    font-size: 15px; /* Font size for the collection title */
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap onto the next line */
+    gap: 5px; /* Space between buttons */
+}
+
+.tags button {
+    background-color: white; /* Button background color */
+    border: 1px solid #b4bdba;
+    border-radius: 25px; /* Rounded corners for buttons */
+    padding: 5px 10px; /* Padding inside buttons */
+    cursor: pointer;
+    font-size: 12px; /* Font size for button text */
+    transition: background-color 0.3s;
+}
+
+.tags button.active {
+    background-color: #d3d3d3; /* Background color for active button */
+}
+
+.tags button:hover {
+    background-color: rgba(237, 242, 244, 0.8); /* Change background color on hover */
+}
+
+
+
+
+
+/* Scrollable gallery container styling */
+.scroll-gallery {
+    display: grid; /* Use grid layout for images */
+    grid-template-columns: repeat(2, 1fr); /* Two columns *//* Flex layout for horizontal scrolling */
+    gap:10px; /* Space between images */
+    padding: 30px; /* Padding inside the gallery container */
+    margin-left: 10px;
+    
+}
+/* Styling for each gallery image */
+.scroll-gallery img {
+    width: 100px; /* Increased width for each image */
+    height: 150px; /* Increased height for each image */
+    border-radius: 5px; /* Rounded corners for gallery images */
+    cursor: pointer;
+    transition: transform 0.3s; /* Zoom effect on hover */
+    object-fit: cover; 
+}
+
+.scroll-gallery img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-right: 15px;
+        gap: 10px;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details h1 {
+        font-size: 2rem;
+    }
+
+    .price {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.875rem;
+    }
+
+    .collection{
+        flex-direction: column;
+    }
+
+
+
+
+
+    .image {
+        width: auto;
+    }
+
+    .rating span:first-child {
+        width: 20px;
+        height: 20px;
+    }
+
+    .scroll-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 5px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Stack gallery items vertically */
+    }
+}

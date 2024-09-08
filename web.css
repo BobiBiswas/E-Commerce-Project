@@ -158,7 +158,8 @@ body {
 }
 
 .size {
-    display: flex; /* Use Flexbox to align buttons */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);/* Use Flexbox to align buttons */
     gap:0px; /* Space between buttons */
 }
 .size button {
@@ -182,104 +183,115 @@ body {
     font-weight: bold;
 }
 
-/* increment button */
-.input-group {
-    display: flex;
-    justify-content:left;
-    align-items:center;
-    flex-direction: row;
-    border-radius: 15px;
-    width: 130px;
-    height: 20px;
-    margin-right: 5px;
+/* toggle button */
+.toggle-grid-container {
+    display: grid;
+     /* Two columns for the toggle buttons */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px; /* Small gap between the toggle buttons */
+    justify-content: center; /* Center the grid items horizontally */
+    align-items: center; /* Align the grid items vertically */
+}
+.toggle-container {
+    position: relative;
+    
+    width: 90px;
+    height: 25px;
+
   }
-  
-  button,
-  input {
-    outline: none;
-    border: none;
-    padding: 8px;
-    font-size: 15px;
+
+  .toggle-container input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    position: absolute;
+   
+   
+  }
+
+  .slider {
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    right: 5px;
+    bottom: 0px;
+    cursor: pointer;
+    border: 1px solid #b4bdba;
+    transition: 0.4s;
+    pointer-events: none;
+    
+  }
+
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 5px;
+    
+    top: 2px;
+    background-color:rgb(42, 42, 247);
+    transition: 0.2s;
+    pointer-events: none;
     
   }
   
-  input {
-    width: 50%;
-    text-align: center;
-  }
   
-  button {
-    cursor: pointer;
-  }
-  button:nth-last-child(1) {
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-  button:nth-child(1) {
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-  }
-  
-  button:hover {
-    background-color: #e6e6e6;
-  }
-  button:nth-last-child(1):active {
-    box-shadow: inset -4px 5px 10px rgba(0, 0, 0, 0.5);
-  }
-  button:nth-child(1):active {
-    box-shadow: inset 4px 5px 10px rgba(0, 0, 0, 0.5);
-  }
 
+  
+.slider.round-1,.slider.round-2{
+    border-radius: 34px;
+  }
+  
+  .slider.round-1:before {
+    border-radius: 50%;
+  }
+  .slider.round-2::before {
+    border-radius: 40%;
+    left: 40px;
+    margin: 0px;
+    background-color: gray;
+    width: 35px;
+    height: 20px ;
+    
+  }
 
 
   /* dropdown button*/
-.button-container {
+  .dropdown-container {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 5px 0; /* Add gap between toggle container and buy button */
+    height: 40px;
+    
+
 }
 
 .dropdown-button {
-    
-    padding: 5px;
+    border-radius: 40%;
+    height: 45px;
+    width: 28px;
+    font-size: 10px;
+    margin-right: 15px; /* Gap between dropdown button and icon */
     cursor: pointer;
-    margin-right: 10px;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    border-radius: 50%; /* Makes the button circular */
+    border: 1px solid #b4bdba;
+
+}
+
+
+
+.buy button {
+    
+    margin-top:5px;
+    width:75px;
+    height: 45px;
+    border-radius: 39%; /* Makes the button circular */
     border: 1px solid #b4bdba;
     align-items: center; /* Vertically center text */
     justify-content: center; /* Horizontally center text */
-    transition: background-color 0.3s;
-    font-size: 10px; /* Adjust as needed */
-    text-align: center; /* Ensure text is centered within the button */
-}
-
-.dropdown-button {
-    background-color: #f0f0f0;
-    font-size: 14px; /* Adjust as needed */
-}
-
-.dropdown-button::after {
-    content: "▼";
-    font-size: 12px;
-    margin-left:0;
-}
-
-.dropdown-button:hover {
-    background-color: #e0e0e0; /* Hover effect */
-}
-
-.buy button {
-    margin-right: 10px;
-    margin-top:-10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 15px; /* Makes the button circular */
-    border: 1px solid #b4bdba;
-    align-items: center; /* Vertically center text */
-    justify-content: left; /* Horizontally center text */
     transition: background-color 0.3s;
     font-size: 8px; /* Adjust as needed */
     text-align: center; /* Ensure text is centered within the button */
@@ -305,7 +317,7 @@ body {
     left: 20px; /* Adjust position as needed */
     display: flex;
     flex-direction:column;
-    gap: -1px;
+    gap: -4px;
     
     /* Space between rating elements */
 }
@@ -321,14 +333,23 @@ body {
     transition: background-color 0.3s;
     text-align: left;
     border: 1px solid #b4bdba;
+    position: relative; /* Allow overlapping effect */
+    /* Control stacking order */
 
 }
 .rating.large {
     font-size: 18px; /* Larger font size for the large rating */
+    z-index: 2; 
 }
 
 .rating.small {
-    font-size: 14px; /* Smaller font size for the small rating */
+    font-size: 14px;
+     /* Smaller font size for the small rating */
+    margin-top: -10px;
+    width: 110px;
+    height: 35px; /* Negative margin to overlap */
+    z-index: 1; 
+    left: 5px;
 }
 
 
@@ -353,15 +374,15 @@ body {
 
 .rating.small span:first-child {
     width: 25px; /* Smaller size for the circular box */
-    height: 20px; /* Smaller size for the circular box */
-    font-size: 13px; /* Smaller font size inside the circle */
+    height: 25px; /* Smaller size for the circular box */
+    font-size: 10px; /* Smaller font size inside the circle */
 }
 
 .rating span:last-child {
-    font-size: 14px; /* Font size for the text beside the circle */
+    font-size: 13px; /* Font size for the text beside the circle */
 }
 .rating.small span:last-child {
-    font-size: 14px; /* Smaller font size for the text beside the circle */
+    font-size: 10px; /* Smaller font size for the text beside the circle */
 }
 
         
@@ -450,15 +471,23 @@ body {
 
 .collection {
     position:absolute;
-    left: -20px; /* Position from the left side of the image */
-    top:80%;/* Position from the top side of the image */
+    
+    left: 5px; /* Position from the left side of the image */
+    top:55%;/* Position from the top side of the image */
     color: rgb(17, 17, 17); /* Text color for better visibility */
     background-color: white; /* Semi-transparent background */
     padding: 10px; /* Padding around the content */
-    border-radius: 30px; /* Rounded corners for the container */
-    width: 180px;
-    height: 120px;
+    border-radius: 30%;
+    width: 200px;
+    transform: translate(-50%, -50%); 
+    height: 100px;
+    
+    
 }
+
+
+
+
 
 .collection h2 {
     margin: 5px 5px 10px 5px; /* Remove default margins and add bottom margin */
@@ -468,7 +497,7 @@ body {
 .tags {
     display: flex;
     flex-wrap: wrap; /* Allows buttons to wrap onto the next line */
-    gap: 5px; /* Space between buttons */
+    gap: 4px; /* Space between buttons */
 }
 
 .tags button {
@@ -480,6 +509,7 @@ body {
     font-size: 12px; /* Font size for button text */
     transition: background-color 0.3s;
 }
+
 
 .tags button.active {
     background-color: #d3d3d3; /* Background color for active button */
@@ -493,86 +523,165 @@ body {
 
 
 
+
 /* Scroll container for vertical scrolling */
-.scroll-container {
-    height:500px; /* Adjust the height as needed */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 10px; /* Padding inside the scroll container */
-    margin-left: 10px;
-     /* Optional border for better visualization */
-    border-radius: 25px; /* Optional rounded corners */
-}
-
-/* Scrollable gallery container styling */
-/* Scroll container for vertical scrolling */
-.scroll-container {
-    height: 400px; /* Adjust the height as needed */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 10px; /* Padding inside the scroll container */
-    margin-left: -5px;
-     /* Optional order for better visualization */
-    border-radius: 5px; /* Optional rounded corners */
-}
-
-/* Scrollable gallery container styling */
-.scroll-gallery {
-    display: grid; /* Use grid layout for images */
-    grid-template-columns: 1fr 1fr; /* Two columns layout */
-    grid-template-rows: repeat(2, auto); /* Two rows layout */
-    gap: 10px; /* Space between images */
-}
-
-/* Styling for each gallery item */
-.gallery-item {
-    position: relative;
+/* Main container for the gallery and slider */
+.gallery-container {
     display: flex;
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center align items horizontally */
-    width: 100%; /* Full width of the container */
-    border-radius: 5px; /* Rounded corners for items */
-    overflow: hidden; /* Ensure no overflow of content */
+    position: relative;
+    width: 400px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
 }
 
-.scroll-gallery img {
-    width: 150px; /* Full width of each gallery item */
-    height: 200px; /* Height of each image */
-    border-radius: 15px; /* Rounded corners for images */
+
+.image-container {
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    gap: 10px; /* Space between images */
+    /* Custom colors for Firefox */
+   
+}
+/* Custom scrollbar for WebKit browsers */
+/* Container for the range slider */
+.slider-container {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    height: 200px; /* Height of the slider container */
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Vertical range slider styling */
+.vertical-slider {
+    writing-mode: bt-lr; /* Sets vertical orientation for the slider */
+    width: 100%;
+    height: 300px; /* Full height of the slider container */
+    margin: 10px 10px; /* Margin for spacing */
     cursor: pointer;
-    transition: transform 0.3s; /* Zoom effect on hover */
-    object-fit: cover;
+    transform: rotate(-90deg); /* Rotates slider to make it vertical */
+    transform-origin: 50% 50%; /* Keeps slider centered after rotation */
+    -webkit-appearance: none; /* Removes default appearance */
+    appearance: none;
+    background-color: transparent; /* Transparent track */
+    outline: none;
 }
 
-.scroll-gallery img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+/* Custom style for the slider track */
+.vertical-slider::-webkit-slider-runnable-track {
+    width: 8px; /* Width of the track */
+    background-color: #e0e0e0; /* Light gray track background */
+    border-radius: 5px;
+    width: 10px;
 }
 
-.gallery-item p {
-    margin-top: 5px; /* Space between image and text */
-    font-size: 14px; /* Font size for the text */
-    text-align: center; /* Center align text */
-    color: #333; /* Text color */
+/* Custom style for the slider thumb (blue icon) */
+.vertical-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Removes default thumb */
+    appearance: none;
+    width: 16px; /* Size of the thumb */
+    height: 16px; /* Size of the thumb */
+    background-color: rgb(19, 19, 19); /* Blue color for the thumb */
+    border-radius: 50%; /* Makes the thumb circular */
+    cursor: pointer;
+    position: relative;
+    transform: translateY(-5%);
+    top: 50%;  /* Adjusts the thumb position */
 }
 
-/* Custom positioning for specific items */
-.item-1 {
-    grid-row: 1 / 2; /* Place in the first row */
-    grid-column: 1 / 2; /* Place in the first column */
+/* Firefox compatibility for custom thumb */
+.vertical-slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border: none;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.item-2 {
-    grid-row: 2 / 3; /* Place in the second row */
-    grid-column: 1 / 2; /* Place in the first column */
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px; /* Adjust for rounded corners */
+    overflow:none; /* Hide overflow */
+    background: white; /* Background color for the text and buttons area */
 }
 
-.item-3 {
-    grid-row: 1 / 2; /* Place in the first row */
-    grid-column: 2 / 3; /* Place in the second column */
+.image-wrapper img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures images cover the container */
+    border-radius: 20px;
 }
 
-.item-4 {
-    grid-row: 2 / 3; /* Place in the second row */
-    grid-column: 2 / 3; /* Place in the second column */
+.text-and-buttons {
+    padding: 10px;
 }
+
+.image-text {
+    margin: 0 0 10px 0;
+    font-size: 10px; /* Adjust text size as needed */
+    color: rgb(17, 17, 17); /* Text color */
+}
+
+.button-container {
+    display: flex;
+    gap: 5px; /* Space between buttons */
+}
+
+.btn {
+    background-color:white; /* Primary button color */
+    color: rgb(29, 28, 28);
+    border: none;
+    border-radius: 15px;
+    border: 1px solid #b4bdba;
+    padding: 5px 5px;
+    cursor: pointer;
+    font-size: 10px; /* Adjust button text size */
+}
+
+.btn:hover {
+    background-color: #aec4db; /* Darker shade on hover */
+}
+
+
+/* Grid layout adjustments */
+.image-container {
+    grid-template-areas: 
+        "image1 image2"
+        "image3 image4";
+}
+
+.image-wrapper:nth-child(1) {
+    grid-area: image1;
+}
+
+.image-wrapper:nth-child(2) {
+    grid-area: image2;
+    margin-top: 50%;
+}
+
+.image-wrapper:nth-child(3) {
+    grid-area: image3;
+    margin-top: -55%;
+}
+
+.image-wrapper:nth-child(4) {
+    grid-area: image4;
+    
+}
+
+
+
+
+
 
 
 /* Responsive Design */
@@ -621,11 +730,6 @@ body {
     .rating span:first-child {
         width: 20px;
         height: 20px;
-    }
-
-    .scroll-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 5px;
     }
 
     .gallery {

@@ -48,40 +48,95 @@
                     </div>
                     
                    
-                    <div class="button-container">
-                        <button class="dropdown-button"></button>
+                    <div class="toggle-grid-container">
+                        <div class="toggle-container">
+                            
+                            <!-- First Toggle -->
+                            <input type="checkbox" id="toggle1" class="toggle-input" />
+                            <div class="slider round-1"></div>
+                        </div>
+                        
+                        <div class="toggle-container">
+                            <!-- Second Toggle -->
+                            <input type="checkbox" id="toggle2" class="toggle-input" />
+                            <div class="slider round-2"></div>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <button id="decrement" onclick="decrementValue()">-</button>
-                        <input type="number" id="input" value="0" readonly>
-                        <button id="increment" onclick="incrementValue()">+</button>
+
+                
+                    <div class="dropdown-container">
+                        <!-- Dropdown button -->
+                        <button class="dropdown-button"><i class="fas fa-caret-down icon"></i></button>
+                        <!-- Icon next to the dropdown -->
+                        
                     </div>
+                    
+                    
+                    
                     <div class="buy">
                         <button>Buy</button>
                     </div>
+                    
+
+                    
+                
+    
                 </div>
+
                 
                 <!-- Scrollable gallery section -->
-                <div class="scroll-container">
-                    <div class="scroll-gallery">
-                        <div class="gallery-item item-1">
-                            <img src="img/g1.jpeg" alt="Gallery image 1">
-                            <p>Wealth</p>
+                <div class="gallery-container" id="scrollable-image-container">
+                <div class="image-container">
+                    <div class="image-wrapper">
+                        <img src="./img/g1.jpeg" alt="Image 1">
+                        <div class="text-and-buttons">
+                            <p class="image-text">Phoniex .$ 1200</p>
+                            <div class="button-container">
+                                <button class="btn">C </button>
+                                <button class="btn">10</button>
+                            </div>
                         </div>
-                        <div class="gallery-item item-2">
-                            <img src="img/g4.png" alt="Gallery image 2">
-                            <p>phonix</p>
-                        </div>
-                        <div class="gallery-item item-3">
-                            <img src="img/g1.jpeg" alt="Gallery image 3">
-                            <p>Irlen</p>
-                        </div>
-                        <div class="gallery-item item-4">
-                            <img src="img/g4.png" alt="Gallery image 4">
-                            <p>Bah</p>
-                        </div>
+
                     </div>
+                    
+                    <div class="image-wrapper">
+                        <img src="./img/g1.jpeg" alt="Image 2">
+                        <div class="text-and-buttons">
+                            <p class="image-text">Phoniex .$ 1200</p>
+                            <div class="button-container">
+                                <button class="btn">C</button>
+                                <button class="btn">10</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="./img/g1.jpeg" alt="Image 3">
+                        <div class="text-and-buttons">
+                            <p class="image-text">Phoniex .$ 1200</p>
+                            <div class="button-container"></div>
+                                <button class="btn">C</button>
+                                <button class="btn">10</button>
+                            </div>
+                        </div>
+                    <div class="image-wrapper">
+                        <img src="./img/g1.jpeg" alt="Image 4">
+                        <div class="text-and-buttons">
+                            <p class="image-text">Phoniex .$ 1200</p>
+                            <div class="button-container"></div>
+                                <button class="btn">D </button>
+                                <button class="btn">10</button>
+                            </div>
+                            
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" class="vertical-slider" min="0" max="100" value="0" id="image-slider" orient="vertical">
+                        </div>
                 </div>
+                </div>
+                
+                
             </div>
             <div class="image">
                 <img id="main-image" alt="Main image" src="img/furniture.jpg" height="400" width="500"/>
@@ -119,6 +174,7 @@
                     <button><i class="fas fa-share-alt"></i></button>
                 </div>
 
+                
                 <!--Summercollection-->
                 <div class="collection">
                     <div class="tags">
@@ -131,12 +187,7 @@
                     </div>
                     <h2>Summer Collection</h2>
                 </div>
-
-               
-
-                
-        
-
+            
             </div>
                 
         </div>
